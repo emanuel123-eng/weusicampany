@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEUSI DIGITAL TRANSFORMERS</title>
+
+<style>
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom right, #e6f2e6, #00a651);
+  color: #0a192f;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: #006622;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+nav {
+  background: #009933;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1581090700227-87fdfc2f38a7?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background: #004d1a;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.1);
+  background: #006622;
+}
+
+/* About Section */
+.about-images {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.about-images img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Overlay text for emphasis */
+.card .overlay-text {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #006622;
+  font-size: 16px;
+}
+
+/* Highlights Section */
+.highlights {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.highlight {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  flex: 1 1 200px;
+}
+
+.highlight h3 {
+  font-size: 28px;
+  color: #006622;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  background: #006622;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Modal Image */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.modal span {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Floating WhatsApp button */
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>WEUSI DIGITAL TRANSFORMERS</h1>
+  <p>Innovate. Secure. Transform. Your Partner in Digital Solutions</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Innovate. Secure. Transform.</h2>
+  <p>We provide Web Development, AI Chatbots, Penetration Testing & ICT Solutions in Tanzania.</p>
+  <button onclick="scrollToSection('services')">See Our Services</button>
+  <button onclick="scrollToSection('contact')">Contact Us</button>
+</section>
+
+<section id="about">
+  <h2>About WEUSI DIGITAL TRANSFORMERS</h2>
+  <div class="about-images">
+    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=600&q=80" alt="Founder at work" onclick="openModal(this.src)">
+    <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=600&q=80" alt="Technology workspace" onclick="openModal(this.src)">
+  </div>
+  <p>
+    WEUSI DIGITAL TRANSFORMERS is a technology-driven company specializing in ICT solutions, AI chatbots, web development, penetration testing, and electronics repair. 
+    We empower businesses and individuals to harness the power of modern technology for growth, security, and efficiency.
+  </p>
+
+  <h3>Our Mission</h3>
+  <p>Deliver innovative digital solutions that transform your business and boost efficiency.</p>
+
+  <h3>Our Vision</h3>
+  <p>Become a leading technology solutions provider in Tanzania, recognized for quality and innovation.</p>
+
+  <h3>Founder</h3>
+  <p>Founded by <strong>Emanuel Thomas William</strong>, a UDSM student passionate about creating smart solutions for businesses and individuals.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>We build modern, responsive, and high-performing websites for businesses and individuals. Boost your online presence and reach more customers.</p>
+      <div class="overlay-text">Increase Engagement & Sales</div>
+    </div>
+    <div class="card">
+      <h3>AI Chatbots</h3>
+      <p>Intelligent chatbots to automate customer support, improve engagement, and save time. Deliver instant responses to your clients 24/7.</p>
+      <div class="overlay-text">Enhance Customer Experience</div>
+    </div>
+    <div class="card">
+      <h3>Penetration Testing</h3>
+      <p>Identify vulnerabilities, secure your systems, and protect your business from cyber threats. We provide professional cybersecurity solutions.</p>
+      <div class="overlay-text">Secure Your Business</div>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <div class="highlight">
+      <h3>100+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="highlight">
+      <h3>50+</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="highlight">
+      <h3>24/7</h3>
+      <p>Support Available</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📞 Phone: 0765000043</p>
+  <p>📧 Email: emmanuelmushi055@gmail.com</p>
+  <p>📍 Location: Dar es Salaam, Tanzania</p>
+</section>
+
+<footer>
+  <p>© 2026 WEUSI DIGITAL TRANSFORMERS. All Rights Reserved.</p>
+</footer>
+
+<!-- Modal for images -->
+<div class="modal" id="imageModal">
+  <span onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="">
+</div>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/255765000043" class="whatsapp" target="_blank">WhatsApp</a>
+
+<script>
+// Smooth scroll
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Image modal
+function openModal(src) {
+  document.getElementById('imageModal').style.display = 'flex';
+  document.getElementById('modalImage').src = src;
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
